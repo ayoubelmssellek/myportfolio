@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Ayoub Elmssellek
 
-## Getting Started
+Portfolio personnel développé avec Next.js, TypeScript et Tailwind CSS.
 
-First, run the development server:
+## Démarrage
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Personnalisation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Photo de profil
 
-## Learn More
+1. Ajoutez votre photo dans `public/profile.jpg`
+2. Modifiez `profileImage` dans `src/data/portfolio.ts` :
 
-To learn more about Next.js, take a look at the following resources:
+```ts
+profileImage: "/profile.jpg",
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### CV (téléchargement)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Ajoutez votre CV en PDF dans `public/cv.pdf`
+2. Le chemin est déjà configuré dans `src/data/portfolio.ts` (`cvPath: "/cv.pdf"`)
 
-## Deploy on Vercel
+### Contenu
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Toutes les informations du CV sont centralisées dans **`src/data/portfolio.ts`** :
+- Informations personnelles
+- Profil
+- Expériences et projets
+- Compétences
+- Formations
+- Langues
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Modifiez ce fichier pour mettre à jour le contenu du site.
+
+## Sections
+
+- **Hero** — Présentation avec photo à droite, texte à gauche
+- **Profil** — Description professionnelle
+- **Expérience & Projets** — Parcours et réalisations
+- **Compétences** — Personnelles et techniques
+- **Formation & Langues** — Parcours académique
+- **Contact** — Coordonnées et liens sociaux
+
+## Build production
+
+```bash
+npm run build
+npm start
+```
