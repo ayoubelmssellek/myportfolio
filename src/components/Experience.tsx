@@ -1,21 +1,26 @@
+"use client";
+
 import { Briefcase, MapPin, Clock, Code2 } from "lucide-react";
 import Section from "./Section";
-import { experiences, projects } from "@/data/portfolio";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Experience() {
+  const { t } = useLanguage();
+  const { experience } = t;
+
   return (
     <Section
       id="experience"
-      title="Expérience & Projets"
-      subtitle="Mon parcours professionnel et réalisations concrètes"
+      title={experience.title}
+      subtitle={experience.subtitle}
     >
       <div className="space-y-8">
         <h3 className="flex items-center gap-2 text-xl font-semibold text-white">
           <Briefcase size={22} className="text-cyan-400" />
-          Expérience
+          {experience.experienceLabel}
         </h3>
         <div className="space-y-6">
-          {experiences.map((exp) => (
+          {experience.items.map((exp) => (
             <article
               key={exp.id}
               className="group rounded-2xl border border-white/5 bg-zinc-900/50 p-6 transition-colors hover:border-cyan-500/20"
@@ -29,7 +34,7 @@ export default function Experience() {
                     {exp.title}
                   </h4>
                   <div className="mt-2 flex flex-wrap gap-4 text-sm text-zinc-400">
-                    {exp.location && (
+                    {"location" in exp && exp.location && (
                       <span className="flex items-center gap-1">
                         <MapPin size={14} />
                         {exp.location}
@@ -38,7 +43,7 @@ export default function Experience() {
                     <span className="flex items-center gap-1">
                       <Clock size={14} />
                       {exp.period}
-                      {exp.duration && ` · ${exp.duration}`}
+                      {"duration" in exp && exp.duration && ` · ${exp.duration}`}
                     </span>
                   </div>
                 </div>
@@ -60,10 +65,10 @@ export default function Experience() {
 
         <h3 className="flex items-center gap-2 pt-8 text-xl font-semibold text-white">
           <Code2 size={22} className="text-cyan-400" />
-          Projets
+          {experience.projectsLabel}
         </h3>
         <div className="grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
+          {experience.projects.map((project) => (
             <article
               key={project.id}
               className="rounded-2xl border border-white/5 bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 p-6 transition-all hover:border-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/5"

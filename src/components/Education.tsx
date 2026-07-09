@@ -1,24 +1,29 @@
+"use client";
+
 import { GraduationCap, Languages } from "lucide-react";
 import Section from "./Section";
-import { education, languages } from "@/data/portfolio";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Education() {
+  const { t } = useLanguage();
+  const { education } = t;
+
   return (
     <Section
       id="formation"
-      title="Formation & Langues"
-      subtitle="Parcours académique et compétences linguistiques"
+      title={education.title}
+      subtitle={education.subtitle}
     >
       <div className="grid gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <h3 className="mb-6 flex items-center gap-2 text-lg font-semibold text-white">
             <GraduationCap size={20} className="text-cyan-400" />
-            Formations
+            {education.educationLabel}
           </h3>
           <div className="relative space-y-0">
-            {education.map((item, index) => (
+            {education.items.map((item, index) => (
               <div key={item.id} className="relative flex gap-6 pb-8 last:pb-0">
-                {index < education.length - 1 && (
+                {index < education.items.length - 1 && (
                   <div className="absolute left-[11px] top-8 h-full w-px bg-white/10" />
                 )}
                 <div className="relative z-10 mt-1.5 h-6 w-6 shrink-0 rounded-full border-2 border-cyan-400 bg-zinc-950" />
@@ -42,10 +47,10 @@ export default function Education() {
         <div>
           <h3 className="mb-6 flex items-center gap-2 text-lg font-semibold text-white">
             <Languages size={20} className="text-cyan-400" />
-            Langues parlées
+            {education.languagesLabel}
           </h3>
           <div className="space-y-4">
-            {languages.map((lang) => (
+            {education.languages.map((lang) => (
               <div
                 key={lang.name}
                 className="rounded-xl border border-white/5 bg-zinc-900/50 p-5"

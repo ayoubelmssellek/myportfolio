@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,24 +9,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ayoub Elmssellek | Développeur Full-Stack",
+  title: "Ayoub Elmssellek | Full-Stack Developer",
   description:
-    "Portfolio de Ayoub Elmssellek - Développeur Logiciel Full-Stack spécialisé en applications web, mobiles et SaaS. Laravel, React, Next.js, Flutter.",
+    "Portfolio of Ayoub Elmssellek - Full-Stack Software Developer specialized in web, mobile and SaaS applications. Laravel, React, Next.js, Flutter.",
   keywords: [
-    "développeur full-stack",
+    "full-stack developer",
     "Laravel",
     "React",
     "Next.js",
     "Flutter",
     "portfolio",
-    "Maroc",
+    "Morocco",
     "Dakhla",
   ],
   authors: [{ name: "Ayoub Elmssellek" }],
   openGraph: {
-    title: "Ayoub Elmssellek | Développeur Full-Stack",
+    title: "Ayoub Elmssellek | Full-Stack Developer",
     description:
-      "Développeur full-stack spécialisé en applications web, mobiles et SaaS.",
+      "Full-stack developer specialized in web, mobile and SaaS applications.",
     type: "website",
   },
 };
@@ -36,9 +37,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

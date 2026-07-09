@@ -1,9 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "./icons";
 import { personalInfo } from "@/data/portfolio";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Hero() {
+  const { t, locale } = useLanguage();
+  const { hero } = t;
+  const cvPath = personalInfo.cvPaths[locale];
+
   return (
     <section
       id="accueil"
@@ -24,10 +31,9 @@ export default function Hero() {
 
       <div className="container-custom relative z-10 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Text */}
           <div className="order-2 lg:order-1">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-cyan-400">
-              Bonjour, je suis
+              {hero.greeting}
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
               {personalInfo.firstName}{" "}
@@ -36,11 +42,10 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-4 text-xl font-medium text-zinc-300 sm:text-2xl">
-              {personalInfo.title}
+              {hero.title}
             </p>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-400">
-              Je conçois et développe des applications web, mobiles et SaaS
-              performantes — de l&apos;idée au déploiement en production.
+              {hero.tagline}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -48,15 +53,15 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-6 py-3 text-sm font-semibold text-zinc-950 transition-all hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
               >
-                Me contacter
+                {hero.contactMe}
               </a>
               <a
-                href={personalInfo.cvPath}
+                href={cvPath}
                 download
                 className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-cyan-500/50 hover:bg-white/10"
               >
                 <Download size={18} />
-                Télécharger CV
+                {hero.downloadCv}
               </a>
             </div>
 
@@ -89,7 +94,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Image */}
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 blur-2xl" />
@@ -105,12 +109,12 @@ export default function Hero() {
                   />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6">
-                  <p className="font-semibold text-white">Software Developer</p>
+                  <p className="font-semibold text-white">{hero.imageBadge}</p>
                 </div>
               </div>
               <div className="absolute -right-4 -bottom-4 rounded-2xl border border-cyan-500/30 bg-zinc-900 px-4 py-3 shadow-xl">
                 <p className="text-2xl font-bold text-cyan-400">3+</p>
-                <p className="text-xs text-zinc-400">ans d&apos;expérience</p>
+                <p className="text-xs text-zinc-400">{hero.yearsExperience}</p>
               </div>
             </div>
           </div>
@@ -121,7 +125,9 @@ export default function Hero() {
             href="#profil"
             className="flex flex-col items-center gap-2 text-zinc-500 transition-colors hover:text-cyan-400"
           >
-            <span className="text-xs uppercase tracking-widest">Découvrir</span>
+            <span className="text-xs uppercase tracking-widest">
+              {hero.discover}
+            </span>
             <ArrowDown size={20} className="animate-bounce" />
           </a>
         </div>

@@ -1,31 +1,39 @@
+"use client";
+
 import { Brain, Wrench } from "lucide-react";
 import Section from "./Section";
-import { personalSkills, technicalSkills } from "@/data/portfolio";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Skills() {
+  const { t } = useLanguage();
+  const { skills } = t;
+
   const techCategories = [
-    { title: "Langages & Frameworks", items: technicalSkills.languages },
-    { title: "Bases de données", items: technicalSkills.databases },
-    { title: "Développement", items: technicalSkills.development },
-    { title: "Outils", items: technicalSkills.tools },
-    { title: "Autres", items: technicalSkills.other },
+    { title: skills.categories.languages, items: skills.technical.languages },
+    { title: skills.categories.databases, items: skills.technical.databases },
+    {
+      title: skills.categories.development,
+      items: skills.technical.development,
+    },
+    { title: skills.categories.tools, items: skills.technical.tools },
+    { title: skills.categories.other, items: skills.technical.other },
   ];
 
   return (
     <Section
       id="competences"
-      title="Compétences"
-      subtitle="Savoir-faire personnel et technique"
+      title={skills.title}
+      subtitle={skills.subtitle}
       className="bg-zinc-900/50"
     >
       <div className="grid gap-10 lg:grid-cols-2">
         <div>
           <h3 className="mb-6 flex items-center gap-2 text-lg font-semibold text-white">
             <Brain size={20} className="text-cyan-400" />
-            Personnelles
+            {skills.personalLabel}
           </h3>
           <div className="flex flex-wrap gap-3">
-            {personalSkills.map((skill) => (
+            {skills.personal.map((skill) => (
               <span
                 key={skill}
                 className="rounded-xl border border-white/5 bg-zinc-950/50 px-4 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-cyan-500/30 hover:text-white"
@@ -39,7 +47,7 @@ export default function Skills() {
         <div>
           <h3 className="mb-6 flex items-center gap-2 text-lg font-semibold text-white">
             <Wrench size={20} className="text-cyan-400" />
-            Techniques
+            {skills.technicalLabel}
           </h3>
           <div className="space-y-5">
             {techCategories.map((category) => (

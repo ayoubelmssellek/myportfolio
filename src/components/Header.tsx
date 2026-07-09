@@ -2,14 +2,18 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks, personalInfo } from "@/data/portfolio";
+import { personalInfo } from "@/data/portfolio";
+import { useLanguage } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, locale } = useLanguage();
+  const cvPath = personalInfo.cvPaths[locale];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
-      <div className="container-custom flex h-16 items-center justify-between">
+      <div className="container-custom flex h-16 items-center justify-between gap-4">
         <a
           href="#accueil"
           className="text-lg font-bold tracking-tight text-white"
@@ -18,8 +22,8 @@ export default function Header() {
           <span className="text-cyan-400">.</span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+        <nav className="hidden items-center gap-6 lg:flex">
+          {t.nav.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -30,28 +34,34 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href={personalInfo.cvPath}
-          download
-          className="hidden rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:bg-cyan-400 md:inline-block"
-        >
-          Télécharger CV
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher />
+          <a
+            href={cvPath}
+            download
+            className="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:bg-cyan-400"
+          >
+            {t.hero.downloadCv}
+          </a>
+        </div>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="rounded-lg p-2 text-zinc-400 hover:bg-white/5 hover:text-white md:hidden"
-          aria-label="Menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="rounded-lg p-2 text-zinc-400 hover:bg-white/5 hover:text-white"
+            aria-label="Menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {isOpen && (
         <div className="border-t border-white/5 bg-zinc-950/95 px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-2">
-            {navLinks.map((link) => (
+            {t.nav.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -62,11 +72,11 @@ export default function Header() {
               </a>
             ))}
             <a
-              href={personalInfo.cvPath}
+              href={cvPath}
               download
               className="mt-2 rounded-lg bg-cyan-500 px-4 py-3 text-center text-sm font-semibold text-zinc-950"
             >
-              Télécharger CV
+              {t.hero.downloadCv}
             </a>
           </nav>
         </div>
