@@ -108,13 +108,17 @@ export default function Hero() {
                     priority
                   />
                 </div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6">
-                  <p className="font-semibold text-white">{hero.imageBadge}</p>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent p-4 pb-5 sm:p-6">
+                  <p className="font-semibold text-white text-sm sm:text-base">
+                    {hero.imageBadge}
+                  </p>
                 </div>
               </div>
-              <div className="absolute -right-4 -bottom-4 rounded-2xl border border-cyan-500/30 bg-zinc-900 px-4 py-3 shadow-xl">
-                <p className="text-2xl font-bold text-cyan-400">3+</p>
-                <p className="text-xs text-zinc-400">{hero.yearsExperience}</p>
+              <div className="absolute -right-2 top-3 rounded-2xl border border-cyan-500/30 bg-zinc-900 px-3 py-2 shadow-xl sm:-right-4 sm:top-4 sm:px-4 sm:py-3 lg:top-auto lg:-bottom-4">
+                <p className="text-xl font-bold text-cyan-400 sm:text-2xl">4</p>
+                <p className="max-w-[4.5rem] text-[10px] leading-tight text-zinc-400 sm:max-w-none sm:text-xs">
+                  {hero.yearsExperience}
+                </p>
               </div>
             </div>
           </div>
