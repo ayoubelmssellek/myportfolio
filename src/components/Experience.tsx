@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, MapPin, Clock, Code2 } from "lucide-react";
+import { Briefcase, MapPin, Clock, Code2, ExternalLink } from "lucide-react";
 import Section from "./Section";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -73,12 +73,27 @@ export default function Experience() {
               key={project.id}
               className="rounded-2xl border border-white/5 bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 p-6 transition-all hover:border-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/5"
             >
-              <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
-                {project.subtitle}
-              </span>
-              <h4 className="mt-2 text-xl font-bold text-white">
-                {project.title}
-              </h4>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                    {project.subtitle}
+                  </span>
+                  <h4 className="mt-2 text-xl font-bold text-white">
+                    {project.title}
+                  </h4>
+                </div>
+                {"url" in project && project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 rounded-lg border border-white/10 p-2 text-zinc-400 transition-colors hover:border-cyan-500/50 hover:text-cyan-400"
+                    aria-label={`${project.title} live site`}
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                )}
+              </div>
               <p className="mt-3 text-sm text-zinc-400">{project.description}</p>
               <ul className="mt-4 space-y-2">
                 {project.highlights.map((item, i) => (
@@ -101,6 +116,17 @@ export default function Experience() {
                   </span>
                 ))}
               </div>
+              {"url" in project && project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-cyan-500/50 hover:bg-white/10"
+                >
+                  <ExternalLink size={16} />
+                  uniqque.online
+                </a>
+              )}
             </article>
           ))}
         </div>

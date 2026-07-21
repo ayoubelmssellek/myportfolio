@@ -85,6 +85,7 @@ const en = {
         subtitle: "Mobile Project – Commerce & Delivery",
         description:
           "Mobile commerce and delivery application used in production.",
+        url: "https://uniqque.online/",
         highlights: [
           "Designed and developed a complete mobile platform for order and delivery management.",
           "Implemented real-time features and optimized application performance.",
@@ -269,6 +270,7 @@ const fr = {
         subtitle: "Projet Mobile – Commerce & Livraison",
         description:
           "Application mobile de commerce et de livraison utilisée en production.",
+        url: "https://uniqque.online/",
         highlights: [
           "Conception et développement d'une plateforme mobile complète pour la gestion des commandes et livraisons.",
           "Mise en place de fonctionnalités temps réel et optimisation des performances de l'application.",
