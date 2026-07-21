@@ -33,6 +33,29 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
   },
   {
+    id: "limosud-cars",
+    name: "Limosud Cars",
+    url: "https://www.limosudcars.com/",
+    github: null,
+    description: {
+      en: "Car rental platform for Dakhla — fleet, bookings, airport delivery, and multilingual marketing site.",
+      fr: "Plateforme de location de voitures à Dakhla — flotte, réservations, livraison aéroport et site marketing multilingue.",
+    },
+    technologies: ["Next.js", "Laravel", "React", "Tailwind CSS", "SEO"],
+    highlights: {
+      en: [
+        "Full-stack build with Next.js front end and Laravel backend",
+        "Vehicle catalog, booking flow, blog, and multi-language (EN/FR/ES)",
+        "Local SEO for car rental in Dakhla with transparent pricing",
+      ],
+      fr: [
+        "Build full-stack Next.js (front) et Laravel (back)",
+        "Catalogue véhicules, réservation, blog et multilingue (EN/FR/ES)",
+        "SEO local pour la location à Dakhla avec tarifs transparents",
+      ],
+    },
+  },
+  {
     id: "streamnova",
     name: "StreamNova",
     url: "https://stream-nova-sigma.vercel.app",

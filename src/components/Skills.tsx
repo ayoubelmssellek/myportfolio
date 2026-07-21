@@ -15,6 +15,7 @@ export default function Skills() {
       title: skills.categories.development,
       items: skills.technical.development,
     },
+    { title: skills.categories.growth, items: skills.technical.growth },
     { title: skills.categories.tools, items: skills.technical.tools },
     { title: skills.categories.other, items: skills.technical.other },
   ];

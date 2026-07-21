@@ -26,7 +26,7 @@ const en = {
     greeting: "Hello, I'm",
     title: "Full-Stack Software Developer",
     tagline:
-      "I design and build high-performance web, mobile and SaaS applications — from idea to production deployment.",
+      "I design and build high-performance web, mobile and SaaS applications — and grow them with SEO and Meta Ads.",
     contactMe: "Contact me",
     downloadCv: "Download CV",
     discover: "Discover",
@@ -37,13 +37,13 @@ const en = {
     title: "Profile",
     subtitle: "Who I am and what I do",
     role: "Full-Stack Developer",
-    roleTags: "Web · Mobile · SaaS",
+    roleTags: "Web · Mobile · SaaS · SEO · Meta Ads",
     profile:
-      "Full-stack developer with a degree in Digital Development, specialized in designing web, mobile and SaaS applications. Hands-on experience building performant solutions used in production. Rigorous, autonomous and results-driven, I master the full development cycle and aim to contribute to high-impact projects.",
+      "Full-stack developer with a degree in Digital Development, specialized in designing web, mobile and SaaS applications. Hands-on experience building performant solutions used in production. I also master SEO to rank websites on the first page of search results, and Meta Ads (Facebook & Instagram) to acquire customers. Rigorous, autonomous and results-driven, I master the full development and growth cycle.",
     highlights: [
       "Production-ready applications",
-      "Full development lifecycle",
-      "Results-oriented",
+      "SEO & first-page rankings",
+      "Meta Ads campaigns",
     ],
   },
   projects: {
@@ -64,9 +64,9 @@ const en = {
         type: "Freelance",
         highlights: [
           "Development of web, mobile and SaaS platforms with modern technologies.",
-          "Design of management apps, e-commerce and booking systems.",
-          "Digital solutions for shops, restaurants and delivery services.",
-          "Development and maintenance of high-performance Android and iOS applications.",
+          "Design of management apps, e-commerce, booking and car rental systems.",
+          "SEO optimization to rank websites on the first page of Google.",
+          "Meta Ads (Facebook & Instagram) campaigns to drive traffic and conversions.",
         ],
       },
       {
@@ -101,6 +101,7 @@ const en = {
       languages: "Languages & Frameworks",
       databases: "Databases",
       development: "Development",
+      growth: "SEO & Ads",
       tools: "Tools",
       other: "Other",
     },
@@ -108,6 +109,12 @@ const en = {
       languages: ["Laravel", "React.js", "Next.js", "Flutter"],
       databases: ["MySQL", "SQL", "MongoDB"],
       development: ["Front-end & Backend", "UI/UX interface design"],
+      growth: [
+        "SEO (first-page rankings)",
+        "Technical SEO",
+        "Meta Ads (Facebook & Instagram)",
+        "Conversion-focused campaigns",
+      ],
       tools: ["GitHub", "VS Code", "Postman"],
       other: [
         "Requirements analysis",
@@ -165,7 +172,7 @@ const en = {
     location: "Location",
     ctaTitle: "Let's work together",
     ctaText:
-      "Have a web, mobile or SaaS project? I'd be happy to discuss it and help bring it to life.",
+      "Have a web, mobile, SaaS, SEO or Meta Ads project? I'd be happy to discuss it and help bring it to life.",
     sendMessage: "Send a message",
     downloadCv: "Download my CV",
     emailSubject: "Contact - Portfolio",
@@ -195,7 +202,7 @@ const fr = {
     greeting: "Bonjour, je suis",
     title: "Développeur Logiciel Full-Stack",
     tagline:
-      "Je conçois et développe des applications web, mobiles et SaaS performantes — de l'idée au déploiement en production.",
+      "Je conçois et développe des applications web, mobiles et SaaS performantes — et je les fais croître avec le SEO et Meta Ads.",
     contactMe: "Me contacter",
     downloadCv: "Télécharger CV",
     discover: "Découvrir",
@@ -206,13 +213,13 @@ const fr = {
     title: "Profil",
     subtitle: "Qui je suis et ce que je fais",
     role: "Développeur Full-Stack",
-    roleTags: "Web · Mobile · SaaS",
+    roleTags: "Web · Mobile · SaaS · SEO · Meta Ads",
     profile:
-      "Développeur full-stack diplômé en Développement Digital, spécialisé dans la conception d'applications web, mobiles et SaaS. Expérience concrète dans le développement de solutions performantes et utilisées en production. Rigoureux, autonome et orienté résultats, je maîtrise l'ensemble du cycle de développement et souhaite contribuer à des projets à fort impact.",
+      "Développeur full-stack diplômé en Développement Digital, spécialisé dans la conception d'applications web, mobiles et SaaS. Expérience concrète dans le développement de solutions performantes et utilisées en production. Je maîtrise aussi le SEO pour positionner des sites en première page Google, et Meta Ads (Facebook & Instagram) pour acquérir des clients. Rigoureux, autonome et orienté résultats, je maîtrise l'ensemble du cycle de développement et de croissance.",
     highlights: [
       "Applications en production",
-      "Cycle complet de développement",
-      "Orienté résultats",
+      "SEO & première page Google",
+      "Campagnes Meta Ads",
     ],
   },
   projects: {
@@ -233,9 +240,9 @@ const fr = {
         type: "Freelance",
         highlights: [
           "Développement de plateformes web, mobiles et SaaS avec des technologies modernes.",
-          "Conception d'applications de gestion, e-commerce et systèmes de réservation.",
-          "Réalisation de solutions digitales destinées aux commerces, restaurants et services de livraison.",
-          "Développement et maintenance d'applications performantes pour Android et iOS.",
+          "Conception d'applications de gestion, e-commerce, réservation et location de voitures.",
+          "Optimisation SEO pour positionner des sites en première page Google.",
+          "Campagnes Meta Ads (Facebook & Instagram) pour générer trafic et conversions.",
         ],
       },
       {
@@ -270,6 +277,7 @@ const fr = {
       languages: "Langages & Frameworks",
       databases: "Bases de données",
       development: "Développement",
+      growth: "SEO & Ads",
       tools: "Outils",
       other: "Autres",
     },
@@ -277,6 +285,12 @@ const fr = {
       languages: ["Laravel", "React.js", "Next.js", "Flutter"],
       databases: ["MySQL", "SQL", "MongoDB"],
       development: ["Front-end & Backend", "Conception d'interfaces UI/UX"],
+      growth: [
+        "SEO (première page Google)",
+        "SEO technique",
+        "Meta Ads (Facebook & Instagram)",
+        "Campagnes orientées conversion",
+      ],
       tools: ["GitHub", "VS Code", "Postman"],
       other: [
         "Analyse des besoins",
@@ -334,7 +348,7 @@ const fr = {
     location: "Localisation",
     ctaTitle: "Travaillons ensemble",
     ctaText:
-      "Vous avez un projet web, mobile ou SaaS ? Je serais ravi d'en discuter et de contribuer à sa réalisation.",
+      "Vous avez un projet web, mobile, SaaS, SEO ou Meta Ads ? Je serais ravi d'en discuter et de contribuer à sa réalisation.",
     sendMessage: "Envoyer un message",
     downloadCv: "Télécharger mon CV",
     emailSubject: "Prise de contact - Portfolio",
