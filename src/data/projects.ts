@@ -173,7 +173,7 @@ export const showcaseProjects: ShowcaseProject[] = [
   {
     id: "gusto-dakhla",
     name: "Gusto Dakhla",
-    url: "https://restaurantdakhla.vercel.app",
+    url: null,
     github: "https://github.com/ayoubelmssellek/test_frontend",
     description: {
       en: "Full restaurant ordering platform with customer storefront and admin back office.",
@@ -219,7 +219,7 @@ export const showcaseProjects: ShowcaseProject[] = [
   {
     id: "ratemesaas",
     name: "RateMe SaaS",
-    url: "https://ratemesaas.vercel.app",
+    url: null,
     github: "https://github.com/ayoubelmssellek/ratemesaas",
     description: {
       en: "SaaS for restaurants to collect customer reviews via QR codes, with analytics and admin tools.",
