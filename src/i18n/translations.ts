@@ -50,6 +50,8 @@ const en = {
     title: "Projects",
     subtitle: "Selected products and applications I've built and shipped",
     viewLive: "View live",
+    showMore: "See more projects",
+    showLess: "Show less",
   },
   experience: {
     title: "Experience",
@@ -226,6 +228,8 @@ const fr = {
     title: "Projets",
     subtitle: "Produits et applications que j'ai conçus et déployés",
     viewLive: "Voir en ligne",
+    showMore: "Voir plus de projets",
+    showLess: "Voir moins",
   },
   experience: {
     title: "Expérience",

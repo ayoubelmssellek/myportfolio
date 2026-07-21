@@ -1,13 +1,22 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import Section from "./Section";
 import { GitHubIcon } from "./icons";
 import { showcaseProjects } from "@/data/projects";
 import { useLanguage } from "@/i18n/LanguageContext";
 
+const INITIAL_COUNT = 4;
+
 export default function Projects() {
   const { locale, t } = useLanguage();
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll
+    ? showcaseProjects
+    : showcaseProjects.slice(0, INITIAL_COUNT);
+  const hasMore = showcaseProjects.length > INITIAL_COUNT;
 
   return (
     <Section
@@ -17,11 +26,9 @@ export default function Projects() {
       className="bg-zinc-900/50"
     >
       <div className="grid gap-6 md:grid-cols-2">
-        {showcaseProjects.map((project) => {
+        {visibleProjects.map((project) => {
           const linkLabel = project.url
-            ? project.url
-                .replace(/^https?:\/\//, "")
-                .replace(/\/$/, "")
+            ? project.url.replace(/^https?:\/\//, "").replace(/\/$/, "")
             : null;
 
           return (
@@ -99,6 +106,28 @@ export default function Projects() {
           );
         })}
       </div>
+
+      {hasMore && (
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-cyan-500/50 hover:bg-white/10"
+          >
+            {showAll ? (
+              <>
+                {t.projects.showLess}
+                <ChevronUp size={18} />
+              </>
+            ) : (
+              <>
+                {t.projects.showMore}
+                <ChevronDown size={18} />
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </Section>
   );
 }
