@@ -17,6 +17,7 @@ const en = {
     { href: "#accueil", label: "Home" },
     { href: "#profil", label: "Profile" },
     { href: "#experience", label: "Experience" },
+    { href: "#projets", label: "Projects" },
     { href: "#competences", label: "Skills" },
     { href: "#formation", label: "Education" },
     { href: "#contact", label: "Contact" },
@@ -45,8 +46,13 @@ const en = {
       "Results-oriented",
     ],
   },
+  projects: {
+    title: "Projects",
+    subtitle: "Selected products and applications I've built and shipped",
+    viewLive: "View live",
+  },
   experience: {
-    title: "Experience & Projects",
+    title: "Experience",
     subtitle: "My professional journey and concrete achievements",
     experienceLabel: "Experience",
     projectsLabel: "Projects",
@@ -75,28 +81,6 @@ const en = {
           "Requirements analysis and system design.",
           "Built a functional stock management application.",
           "Processed and organized data from multiple files while ensuring accuracy and quality.",
-        ],
-      },
-    ],
-    projects: [
-      {
-        id: "uniqque",
-        title: "Uniqque Delivery App",
-        subtitle: "Mobile Project – Commerce & Delivery",
-        description:
-          "Mobile commerce and delivery application used in production.",
-        url: "https://uniqque.online/",
-        highlights: [
-          "Designed and developed a complete mobile platform for order and delivery management.",
-          "Implemented real-time features and optimized application performance.",
-          "Deployed and maintained a Flutter application used by real users.",
-        ],
-        technologies: [
-          "Flutter",
-          "Firebase",
-          "Laravel",
-          "REST API",
-          "Google Maps API",
         ],
       },
     ],
@@ -202,6 +186,7 @@ const fr = {
     { href: "#accueil", label: "Accueil" },
     { href: "#profil", label: "Profil" },
     { href: "#experience", label: "Expérience" },
+    { href: "#projets", label: "Projets" },
     { href: "#competences", label: "Compétences" },
     { href: "#formation", label: "Formation" },
     { href: "#contact", label: "Contact" },
@@ -230,8 +215,13 @@ const fr = {
       "Orienté résultats",
     ],
   },
+  projects: {
+    title: "Projets",
+    subtitle: "Produits et applications que j'ai conçus et déployés",
+    viewLive: "Voir en ligne",
+  },
   experience: {
-    title: "Expérience & Projets",
+    title: "Expérience",
     subtitle: "Mon parcours professionnel et réalisations concrètes",
     experienceLabel: "Expérience",
     projectsLabel: "Projets",
@@ -260,28 +250,6 @@ const fr = {
           "Analyse des besoins et conception du système.",
           "Développement d'une application fonctionnelle de gestion de stock.",
           "Traitement et organisation des données à partir de plusieurs fichiers tout en garantissant leur exactitude et leur qualité.",
-        ],
-      },
-    ],
-    projects: [
-      {
-        id: "uniqque",
-        title: "Uniqque Delivery App",
-        subtitle: "Projet Mobile – Commerce & Livraison",
-        description:
-          "Application mobile de commerce et de livraison utilisée en production.",
-        url: "https://uniqque.online/",
-        highlights: [
-          "Conception et développement d'une plateforme mobile complète pour la gestion des commandes et livraisons.",
-          "Mise en place de fonctionnalités temps réel et optimisation des performances de l'application.",
-          "Déploiement et maintenance d'une application Flutter utilisée par des utilisateurs réels.",
-        ],
-        technologies: [
-          "Flutter",
-          "Firebase",
-          "Laravel",
-          "REST API",
-          "Google Maps API",
         ],
       },
     ],
